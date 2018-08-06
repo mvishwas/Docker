@@ -7,7 +7,7 @@
 
 **Basic Commands**
 
-``` sh docker pull alpine ```
+```$ docker pull alpine ```
 
 The pull command fetches the alpine image from the Docker registry and saves it in our system
 you are going to run an Alpine Linux container (a lightweight linux distribution) 
@@ -15,7 +15,7 @@ you are going to run an Alpine Linux container (a lightweight linux distribution
 
 ```
 docker run alpine ls -l 
-```
+
 
 total 48
 drwxr-xr-x    2 root     root          4096 Mar  2 16:20 bin
@@ -23,6 +23,9 @@ drwxr-xr-x    5 root     root           360 Mar 18 09:47 dev
 drwxr-xr-x   13 root     root          4096 Mar 18 09:47 etc
 drwxr-xr-x    2 root     root          4096 Mar  2 16:20 home
 drwxr-xr-x    5 root     root          4096 Mar  2 16:20 lib
+
+```
+
 where ls -l is command is passed to docker run command.
 
 
@@ -41,11 +44,11 @@ hello from alpine
 
 Wait, nothing happened! Is that a bug? Well, no. These interactive shells will exit after running any scripted commands, unless they are run in an interactive terminal 
 
-``` docker run -it alpine /bin/sh. ```
+``` $ docker run -it alpine /bin/sh. ```
 
-``` docker ps ```     -- command shows you all containers that are currently running.
+``` $ docker ps ```     -- command shows you all containers that are currently running.
 
-``` docker ps -a ```  -- What you see above is a list of all containers that you ran.
+``` $ docker ps -a ```  -- What you see above is a list of all containers that you ran.
 
 
 **Docker terminalogies**
@@ -60,15 +63,16 @@ and Docker editions
 
 **show running container + stoping + deleting containers**
 
-``` $ docker ps ```
+``` $ docker ps 
 
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
 a7a0e504ca3e        dockersamples/static-site   "/bin/sh -c 'cd /usr/"   28 seconds ago      Up 26 seconds       80/tcp, 443/tcp     stupefied_mahavira
 
+```
 
-``` docker stop a7a0e504ca3e ```   - Stop conatainer with CONTAINER_ID
+``` $ docker stop a7a0e504ca3e ```   - Stop conatainer with CONTAINER_ID
 
-``` docker rm   a7a0e504ca3e ```  - Remove/delete the container with CONTAINER ID
+``` $docker rm   a7a0e504ca3e ```  - Remove/delete the container with CONTAINER ID
 
 
 **Running docker with many option: -** 
@@ -86,11 +90,11 @@ AUTHOR is the environment variable name and Your Name is the value that you can 
 
 **docker port** 
 
-``` $ docker port static-site ````
-
+```
+$ docker port static-site
 443/tcp -> 0.0.0.0:32772
-80/tcp -> 0.0.0.0:32773
-
+80/tcp -> 0.0.0.0:32773 
+```
 
 **Build the image from  the docker file**
 you have writte the docker file, run below command to create the image.
@@ -106,8 +110,8 @@ and the location of the directory containing the Dockerfile - the . indicates th
 **Run your image**
 
 ```$ docker run -p 8888:5000 --name myfirstapp vishwas/myfirstapp ```
-Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 
+Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 
 **Push Docker image to docker Cloud**
 
@@ -133,9 +137,9 @@ Here's a quick summary of the few basic commands we used in our Dockerfile.
 
 - *CMD* : defines the commands that will run on the Image at start-up. Unlike a RUN, this does not create a new layer for the Image, but simply runs the command. There can only be one CMD per a Dockerfile/Image. If you need to run multiple commands, the best way to do that is to have the CMD run a script. CMD requires that you tell it where to run the command, unlike RUN. So example CMD commands would be:
 
-CMD ["python", "./app.py"]
+  CMD ["python", "./app.py"]
 
-CMD ["/bin/bash", "echo", "Hello World"]
+  CMD ["/bin/bash", "echo", "Hello World"]
 
 
 - *EXPOSE* :  creates a hint for users of an image which ports provide services. It is included in the information which can be retrieved via $ docker inspect <container-id>.
@@ -149,16 +153,16 @@ PUSH pushes your image to Docker Cloud, or alternately to a private registry
 
 ``` $ docker image rm vishwasm14/gs-spring-boot-docker
 or
-docker rmi vishwasm14/gs-spring-boot-docker
+$ docker rmi vishwasm14/gs-spring-boot-docker
 
-docker rmi Imagename1 Imagename2
+$ docker rmi Imagename1 Imagename2
 ```
 
 
 **Purging All Unused or Dangling Images**
 
-``` docker system prune
-docker system prune -a   
+``` $ docker system prune
+    $ docker system prune -a   
 ```
 - additionally remove any stopped containers and all unused images (not just dangling images), 
 add the -a flag to the command:
