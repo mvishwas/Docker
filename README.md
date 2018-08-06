@@ -101,6 +101,7 @@ $ docker port static-site
 ```
 
 **Build the image from  the docker file**
+
 you have writte the docker file, run below command to create the image.
 
 ``` 
