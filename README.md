@@ -165,7 +165,8 @@ PUSH pushes your image to Docker Cloud, or alternately to a private registry
 
 **delete an images**
 
-``` $ docker image rm vishwasm14/gs-spring-boot-docker
+``` 
+$ docker image rm vishwasm14/gs-spring-boot-docker
 or
 $ docker rmi vishwasm14/gs-spring-boot-docker
 
