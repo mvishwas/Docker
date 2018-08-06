@@ -77,7 +77,10 @@ $docker rm   a7a0e504ca3e   - Remove/delete the container with CONTAINER ID
 
 **Running docker with many option: -** 
 
-``` $ docker run --name static-site -e AUTHOR="vishwas" -d -P dockersamples/static-site ```
+```
+$ docker run --name static-site -e AUTHOR="vishwas" -d -P dockersamples/static-site 
+
+```
 
 In the above command:
 
@@ -94,12 +97,14 @@ AUTHOR is the environment variable name and Your Name is the value that you can 
 $ docker port static-site
 443/tcp -> 0.0.0.0:32772
 80/tcp -> 0.0.0.0:32773 
+
 ```
 
 **Build the image from  the docker file**
 you have writte the docker file, run below command to create the image.
 
-``` $ docker build -t vishwas/myfirstapp 
+``` 
+$ docker build -t vishwas/myfirstapp 
 ```
 
 The docker build command is quite simple - it takes an optional tag name with the -t flag, 
@@ -109,17 +114,25 @@ and the location of the directory containing the Dockerfile - the . indicates th
 
 **Run your image**
 
-```$ docker run -p 8888:5000 --name myfirstapp vishwas/myfirstapp ```
+```
+$ docker run -p 8888:5000 --name myfirstapp vishwas/myfirstapp 
+
+```
 
 Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 
 **Push Docker image to docker Cloud**
 
-``` $ docker login ```
+```
+$ docker login 
+```
 
 Enter YOUR_USERNAME and password when prompted.
 
-``` $ docker push vishwasm14/myfirstapp ```
+``` 
+$ docker push vishwasm14/myfirstapp 
+
+```
 
 
 **Dockerfile commands summary**
