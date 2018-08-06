@@ -63,17 +63,17 @@ and Docker editions
 
 **show running container + stoping + deleting containers**
 
-``` $ docker ps 
+```
+$ docker ps 
 
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS               NAMES
 a7a0e504ca3e        dockersamples/static-site   "/bin/sh -c 'cd /usr/"   28 seconds ago      Up 26 seconds       80/tcp, 443/tcp     stupefied_mahavira
+ 
+$ docker stop a7a0e504ca3e  - Stop conatainer with CONTAINER_ID
+
+$docker rm   a7a0e504ca3e   - Remove/delete the container with CONTAINER ID
 
 ```
-
-``` $ docker stop a7a0e504ca3e ```   - Stop conatainer with CONTAINER_ID
-
-``` $docker rm   a7a0e504ca3e ```  - Remove/delete the container with CONTAINER ID
-
 
 **Running docker with many option: -** 
 
