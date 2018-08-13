@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+    mongo:
+      image: mongo
+      container_name: mongo-db
+      restart: always
+      ports:
+        - 27017:27017
+      volumes:
+        - /home/vishwas/mongo-data:/data/db
+
+    springboot:
+      image: vishwasm14/devops-metadata
+      restart: always
+      container_name: devops-metadata
+      depends_on:
+        - mongo
+      ports:
+        - 8080:8888    
