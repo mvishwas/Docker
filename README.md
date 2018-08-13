@@ -1,4 +1,18 @@
 
+
+**Comands to run the demo**
+```
+mvn clean install
+docker build -f docker -t "vishwasm14/devops-metadata" .
+docker login 
+docker push vishwasm14/devops-metadata
+
+docker network create spring_mongo_net
+docker run --name mongo-db --network=spring_mongo_net -p 27017:27017 -v /home/vishwas/mongo-data:/data/db -d mongo
+docker run -d --name devops-metadata --network=spring_mongo_net -p 8080:8888  vishwasm14/devops-metadata
+```
+
+
 **INSTALL DOCKER IN LINUX** 
 
 - sudo apt-get update
