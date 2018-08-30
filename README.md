@@ -1,4 +1,16 @@
 
+**DOCKER**
+
+Docker is an open source software platform to create, deploy and manage virtualized application containers on a common operating system (OS), with an ecosystem of allied tools.
+ 
+A container is a virtual walled environment for your application. It’s literally a ‘container’ inside the host OS. Thus your application works like it is in its own self-contained environment, but it’s actually sharing operating system resources of the host computer.  Because of this, containers are more resource efficient than full blown virtual machines. You get more bang for your buck running a bare metal machine with a bunch of containers than you do running a bare metal machine with a bunch of VMs. This is why massive cloud computing companies running 10’s of thousands of servers are running containers. Google, Facebook, Netflix, Amazon are all big advocates of containers.
+
+A Dockerfile is a text file that contains a list of commands that the Docker daemon calls while creating an image
+
+I like the ability of how I can package my applications so easily with Docker. I’ve been living in the Java land for 15+ years. It truly enables “Write Once, Run Anywhere” or WORA. This allows you to package an application as an archive (JAR, WAR or EAR) and that would run wherever the JVM is.
+
+With Docker, I extract myself to a further higher level which says, hey, package application once and deploy it anywhere, wherever Docker Engine is running. Similar to WORA, I call this PODA or “Package Once, Deploy Anywhere.” That results in a higher level extraction where it becomes language-agnostic. It doesn’t matter whether I’m running Java, PHP, Ruby, Scala, pick a language, I can create a package and every Docker engine will understand the same Docker image. I think that to me is the most fascinating aspect and that’s the part that I love.
+
 
 **Comands to run the demo**
 ```
